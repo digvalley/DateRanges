@@ -8,10 +8,10 @@ and returns an array of arrays with date objects.
 Ranges always have two elements [0] = start, [1] = end
 arrays with only one element are induvidual dates that has no range
 
-Array()
+**Array()**
 
 ```js
-['2020-01-10','2020-01-11','2020-01-12'] 
+['2020-01-10','2020-01-11','2020-01-12']
     => [
          [
           Date("2020-01-10"), //start
@@ -20,10 +20,10 @@ Array()
        ]
 ```
 
-Array(Objects)
+**Array(Objects)**
 
 ```js
-[{date:'2020-01-10'},{date:'2020-01-11'},{date:'2020-01-12'},] 
+[{date:'2020-01-10'},{date:'2020-01-11'},{date:'2020-01-12'},]
   => [
          [
           Date("2020-01-10"), //start
@@ -32,13 +32,12 @@ Array(Objects)
        ]
 ```
 
-Array() with induvidual dates
+**Array() with induvidual dates**
 
-```js 
-['2020-01-10','2020-01-08','2020-01-11','2020-01-12'] 
+```js
+['2020-01-10','2020-01-08','2020-01-11','2020-01-12']
     => [
         [ Date("2020-01-08") ], // induvidual
         [ Date("2020-01-10"),Date("2020-01-12")] //start, end
     ]
 ```
-
