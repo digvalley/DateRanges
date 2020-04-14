@@ -10,7 +10,7 @@ arrays with only one element are induvidual dates that has no range
 
 Array()
 
-```
+```js
 ['2020-01-10','2020-01-11','2020-01-12'] 
     => [
          [
@@ -22,8 +22,8 @@ Array()
 
 Array(Objects)
 
-``` 
-[{date:'2020-01-10'},{date:'2020-01-11'},>{date:'2020-01-12'},] 
+```js
+[{date:'2020-01-10'},{date:'2020-01-11'},{date:'2020-01-12'},] 
   => [
          [
           Date("2020-01-10"), //start
@@ -34,7 +34,7 @@ Array(Objects)
 
 Array() with induvidual dates
 
-``` 
+```js 
 ['2020-01-10','2020-01-08','2020-01-11','2020-01-12'] 
     => [
         [ Date("2020-01-08") ], // induvidual
