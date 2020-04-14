@@ -1,0 +1,20 @@
+{
+  "name": "dateranges",
+  "version": "1.0.0",
+  "description": "Function to help find date ranges like \"21.apr - 25.apr\" out of array with dates.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "ava"
+  },
+  "keywords": [
+    "dates",
+    "sorted",
+    "ranges"
+  ],
+  "author": "Thomas Gravdal",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^3.7.0"
+  }
+}
