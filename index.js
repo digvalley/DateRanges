@@ -34,7 +34,7 @@ const findDateRanges = (dates = []) => {
     .reduce((acc, cur, i, v) => {
       let next = v[i + 1]
       let prev = v[i - 1]
-      if (i === 0) return cur + '..'
+
       if (!dayDiff(next, cur, 1) && !dayDiff(prev, cur, 1))
         return `${acc}|${cur}|`
       if (!dayDiff(next, cur, 1)) return `${acc}..${cur}`
