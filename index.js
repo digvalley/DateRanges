@@ -24,31 +24,26 @@ const findDateRanges = (dates = []) => {
 
   // Convert dates to an array of timestamps.
   // Sorts timestamps
-  const sortedTimestamps = dates
+  const sorted = dates
     .map((x) => new Date(hasObjects ? x.date : x).getTime())
     .sort((a, b) => a - b)
 
-  // This is a quick and VERY dirty string comp.
+  // This is still a quick and VERY dirty string comp.
   // but it works for now
-  return sortedTimestamps
-    .map((x, i) => {
-      let next = sortedTimestamps[i + 1]
-      let prev = sortedTimestamps[i - 1]
-      if (dayDiff(next, x, 1) && dayDiff(prev, x, 1)) return '-'
-      if (dayDiff(next, x, 1)) return '.' + x + '-'
-      if (dayDiff(prev, x, 1)) return x + '.'
-      return '.' + x + '.'
-    })
-    .reduce((a, b) => a + b)
-    .substr(1)
-    .slice(0, -1)
-    .split('..')
-    .map((x) =>
-      x
-        .split('-')
-        .filter((x) => x != '')
-        .map((y) => new Date(+y))
-    )
+  return sorted
+    .reduce((acc, cur, i, v) => {
+      let next = v[i + 1]
+      let prev = v[i - 1]
+      if (i === 0) return cur + '..'
+      if (!dayDiff(next, cur, 1) && !dayDiff(prev, cur, 1))
+        return `${acc}|${cur}|`
+      if (!dayDiff(next, cur, 1)) return `${acc}..${cur}`
+      if (!dayDiff(prev, cur, 1)) return `${acc}|${cur}..`
+      return acc
+    }, '')
+    .split('|')
+    .filter((x) => x !== '')
+    .map((x) => x.split('....').map((y) => new Date(+y)))
 }
 
 module.exports = findDateRanges
