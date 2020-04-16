@@ -40,7 +40,7 @@ const findDateRanges = (dates = []) => {
 
       return acc
     }, [])
-    .map((x) => x.map((y) => new Date(+y)))
+    .map((x) => x.map((y) => new Date(y)))
 }
 
 module.exports = findDateRanges
