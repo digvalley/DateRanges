@@ -48,7 +48,7 @@ import React from 'react'
 import { format } from 'date-fns'
 import FDR from './PATH'
 
-const dates = ['2020-05-01','2020-05-02','2020-05-03','2020-05-07,'2020-05-08']
+const dates = ['2020-05-01','2020-05-02','2020-05-03','2020-05-07','2020-05-08']
 const dateRanges = FDR(dates)
 
 const MyFuncComp = ()=>(
